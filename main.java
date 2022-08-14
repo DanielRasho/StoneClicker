@@ -30,7 +30,8 @@ public class main extends World
         helpButton helpButton = new helpButton();
         addObject(helpButton,655,656);
         mainButton.setLocation(374,347);
-        Counter counter = new Counter();
-        addObject(counter, 250, 50);
+        
+        Counter counter2 = new Counter();
+        addObject(counter2, 250, 120);
     }
 }

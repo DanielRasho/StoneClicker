@@ -12,8 +12,22 @@ public class mainButton extends Button
      * Act - do whatever the mainButton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    Counter humansRevived = new Counter();
+    
+    public mainButton(){
+        this.humansRevived.add(1);
+    }
+    
+    @Override
+    protected void addedToWorld(World world){
+        world.addObject(this.humansRevived, 250, 50);
+    }
+
     public void act()
     {
-        // Add your action code here.
+        if(Greenfoot.mouseClicked(this)){
+            this.humansRevived.add(1);
+        }
     }
 }
