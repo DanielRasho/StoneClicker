@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class WarningMessage extends Actor
+public class HelpMessage extends Actor
 {
     /**
      * Act - do whatever the WarningMessage wants to do. This method is called whenever
