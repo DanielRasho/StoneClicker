@@ -18,11 +18,17 @@ public class imageStart extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(700, 700, 1);
         prepare();
+        playMusic();
     }
     
     private void prepare(){
         listener startButton = new listener("ENTER", new story());
         this.addObject(startButton, 0,0);
+    }
+    
+    private void playMusic(){
+        GreenfootSound backgroundMusic = new GreenfootSound("soundtrack.mp3");
+        backgroundMusic.playLoop();
     }
 
 }
