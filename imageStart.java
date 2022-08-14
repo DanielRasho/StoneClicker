@@ -26,6 +26,9 @@ public class imageStart extends World
         this.addObject(startButton, 0,0);
     }
     
+    /**
+     * Start playing the soundtrack once the game has started.
+     */
     private void playMusic(){
         GreenfootSound backgroundMusic = new GreenfootSound("soundtrack.mp3");
         backgroundMusic.playLoop();

@@ -20,6 +20,10 @@ public class main extends World
         prepare();
     }
     
+    /**
+     * Creates a mainButton, exitButton, and helpButton into the main World.
+     * 
+     */
     private void prepare()
     {
         mainButton mainButton = new mainButton();

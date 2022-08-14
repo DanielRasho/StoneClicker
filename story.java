@@ -19,6 +19,11 @@ public class story extends World
         super(700, 700, 1);
         prepare();
     }
+    
+    /**
+     * Creates a listener to change to "story" world once the <Enter> key is
+     * pressed.
+     */
     private void prepare(){
         listener startButton = new listener("ENTER", new main());
         this.addObject(startButton, 0,0);

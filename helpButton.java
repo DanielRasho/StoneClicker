@@ -8,11 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class helpButton extends Button
 {
-    /**
-     * Act - do whatever the helpButton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     HelpMessage message = new HelpMessage();
+    
+    /**
+     * If the mouse hover on this button it will show a help message in the
+     * middle of the screen.
+     */
     public void act()
     {
         if (Greenfoot.mouseMoved(this))
