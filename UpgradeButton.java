@@ -20,6 +20,13 @@ public class UpgradeButton extends Button
     
     public void act()
     {
+        if(activated == true){
+            this.setImage("upgradeButton.png");
+        
+        }
+        else{
+            this.setImage("upgradeButtonOff.png");
+        }
     }
     
     @Override
@@ -30,7 +37,7 @@ public class UpgradeButton extends Button
     public void buyUpgrade(mainButton button){
         this.numUpgrades ++;
         button.reduceEnergy(this.cost);
-        this.cost = this.cost * (int)(Math.pow(1.09,this.numUpgrades));
+        this.cost = this.cost * (int)(Math.pow(1.15,this.numUpgrades));
         this.costCounter.setValue(this.cost);
     }
     public void setActivated(boolean value){

@@ -19,6 +19,8 @@ public class mainButton extends Button
     Counter energyCounter = new Counter();
     int frameCounter = 0;
     int populationBonus = 0;
+    int autoAddSpeed = 29;
+    int clickValue = 1;
     
     public mainButton(){
         this.humansRevivedCounter.setValue(1);
@@ -36,28 +38,16 @@ public class mainButton extends Button
     public void act()
     {
         if(Greenfoot.mouseClicked(this)){
-            this.humansRevivedCounter.add(1);
+            this.humansRevivedCounter.add(this.clickValue); // how much each click cost.
         }
         if(Greenfoot.mouseClicked(this.upgradeButton) 
             && this.upgradeButton.getActivated()){
-                
+    
             upgradeButton.buyUpgrade(this);
+            this.clickValue += 5;
         }
-        if(frameCounter < 29){
-            frameCounter ++;
-        }
-        else{
-            frameCounter = 0;
-            calculateEnergy();
-            calculatePopulation();
-        }
-        
-        if(this.energyCounter.getValue() >= upgradeButton.getCost()){
-            upgradeButton.setActivated(true);
-        }
-        else{
-            this.upgradeButton.setActivated(false);
-        }
+        autoAdd();
+        isUpgradeAvailable();
     }
     
     public void calculateEnergy(){
@@ -73,5 +63,25 @@ public class mainButton extends Button
     
     public void reduceEnergy(int value){
         this.energyCounter.substract(value);
+    }
+    
+    public void autoAdd(){
+        if(this.frameCounter < this.autoAddSpeed){
+            this.frameCounter ++;
+        }
+        else{
+            this.frameCounter = 0;
+            calculateEnergy();
+            calculatePopulation();
+        }
+    }
+    
+    public void isUpgradeAvailable(){
+        if(this.energyCounter.getValue() >= upgradeButton.getCost()){
+            upgradeButton.setActivated(true);
+        }
+        else{
+            this.upgradeButton.setActivated(false);
+        }
     }
 }
