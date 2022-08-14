@@ -78,6 +78,11 @@ public class Counter extends Actor
     {
         target += score;
     }
+    
+    public void substract(int score)
+    {
+        target -= score;
+    }
 
     /**
      * Return the current counter value.
