@@ -37,17 +37,29 @@ public class mainButton extends Button
 
     public void act()
     {
-        if(Greenfoot.mouseClicked(this)){
+        isClicked();
+        hasUpgraded();
+        autoAdd();
+        isUpgradeAvailable();
+    }
+    
+    private void isClicked(){
+        if(Greenfoot.mousePressed(this)){
             this.humansRevivedCounter.add(this.clickValue);
+            this.setImage("EarthClicked.png");
         }
+        else{
+            this.setImage("Earth.png");
+        }
+    }
+    
+    private void hasUpgraded(){
         if(Greenfoot.mouseClicked(this.upgradeButton) 
             && this.upgradeButton.getActivated()){
     
             upgradeButton.buyUpgrade(this);
             this.clickValue += 5;
         }
-        autoAdd();
-        isUpgradeAvailable();
     }
     
     public void calculateEnergy(){
