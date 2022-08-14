@@ -14,6 +14,10 @@ public class exitButton extends Button
      */
     public void act()
     {
-        // Add your action code here.
+        if(Greenfoot.mouseClicked(this)){
+            stopGameScreen world = new stopGameScreen();
+            Greenfoot.setWorld(world);
+            Greenfoot.stop();
+        }
     }
 }

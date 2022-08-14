@@ -38,7 +38,7 @@ public class mainButton extends Button
     public void act()
     {
         if(Greenfoot.mouseClicked(this)){
-            this.humansRevivedCounter.add(this.clickValue); // how much each click cost.
+            this.humansRevivedCounter.add(this.clickValue);
         }
         if(Greenfoot.mouseClicked(this.upgradeButton) 
             && this.upgradeButton.getActivated()){
